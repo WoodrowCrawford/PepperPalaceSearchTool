@@ -1,0 +1,8 @@
+@PepperPalaceSearchToolAPI_HostAddress = http://localhost:5174
+
+GET {{PepperPalaceSearchToolAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+
+###
