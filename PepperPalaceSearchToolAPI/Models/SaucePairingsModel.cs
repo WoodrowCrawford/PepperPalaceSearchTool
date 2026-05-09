@@ -4,7 +4,7 @@ namespace PepperPalaceSearchToolAPI.Models;
 
 
 
-public interface ISaucePairingsModel
+public class SaucePairingsModel
 {
     
     public int SauceId {get; set;}

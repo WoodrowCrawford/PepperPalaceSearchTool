@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 
-public interface ISauceModel
+public class SauceModel
 {   
     //an enum containing the different types of sauces
     public enum SauceTypeEnum
@@ -13,6 +13,8 @@ public interface ISauceModel
         HotSauce,
         WingSauce,
         BBQ,
+        Condiments,
+        Sauce
     }
 
     //an enum containing the different heat levels of sauces

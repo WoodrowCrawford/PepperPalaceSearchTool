@@ -8,11 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
-
 var app = builder.Build();
-
-
 
 
 
@@ -24,7 +20,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 
 var summaries = new[]
 {
@@ -47,6 +42,8 @@ app.MapGet("/weatherforecast", () =>
 
 // Add a default root endpoint
 app.MapGet("/Test", () => "Welcome to Pepper Palace Search Tool API! Try /weatherforecast. also this is a test to see if the api is working. and it is working!");
+
+
 
 app.Run();
 
