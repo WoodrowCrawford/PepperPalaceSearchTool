@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
+//The sauce model will represent the different types of sauces that can be searched for in the Pepper Palace Search Tool. 
+//It will have an ID, a name, a type, and a heat level.
 
 public class SauceModel
 {   
