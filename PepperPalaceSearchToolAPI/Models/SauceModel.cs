@@ -12,24 +12,24 @@ public class SauceModel
     //an enum containing the different types of sauces
     public enum SauceTypeEnum
     {   
-        Salsa,
-        Seasoning,
-        HotSauce,
-        WingSauce,
-        BBQ,
-        Condiments,
-        Sauce
+        Salsa, //1
+        Seasoning, //2
+        HotSauce, //3
+        WingSauce, //4
+        BBQ, //5
+        Condiments, //6
+        Sauce //7
     }
 
     //an enum containing the different heat levels of sauces
     public enum HeatLevelEnum
     {
-        None,
-        Mild,
-        Medium,
-        Hot,
-        XHot,
-        Wild
+        None, //1
+        Mild, //2
+        Medium, //3
+        Hot, //4
+        XHot, //5
+        Wild //6
     }
 
 
