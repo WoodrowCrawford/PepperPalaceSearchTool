@@ -25,6 +25,15 @@ public class PepperPalaceContext: DbContext
         modelBuilder.Entity<SaucePairingsModel>().HasKey(sp => new { sp.SauceId, sp.FoodId });
         modelBuilder.Entity<SauceModel>().HasKey(s => s.SauceId);
         modelBuilder.Entity<FoodModel>().HasKey(f => f.FoodID);
+
+        //convert the SauceTypeEnum and HeatLevelEnum to strings in the database
+        modelBuilder.Entity<SauceModel>().Property(s => s.SauceType).HasConversion<string>();
+        
+        modelBuilder.Entity<SauceModel>().Property(s => s.HeatLevel).HasConversion(v => v.ToString().Replace("_", "-"),
+         v => (SauceModel.HeatLevelEnum)Enum.Parse(typeof(SauceModel.HeatLevelEnum), v.Replace("-", "_")));
+
+        
+
     }
 
 }

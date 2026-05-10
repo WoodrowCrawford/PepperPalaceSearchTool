@@ -17,6 +17,18 @@ namespace PepperPalaceSearchToolAPI.Controllers
             return Ok(sauces);
         }
 
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetSauceById(PepperPalaceContext db, int id)
+        {
+            var sauce = await db.Sauces.FindAsync(id);
+            if (sauce == null)
+            {
+                return NotFound();
+            }
+            return Ok(sauce);
+        }
+
         [HttpPost]
         public async Task<ActionResult> CreateSauce(PepperPalaceContext db, SauceModel sauce)
         {
@@ -30,7 +42,7 @@ namespace PepperPalaceSearchToolAPI.Controllers
                 return BadRequest("A sauce with that name already exists.");
             }
 
-            return CreatedAtAction(nameof(GetSauces), new { id = sauce.SauceId }, sauce);
+            return CreatedAtAction(nameof(GetSauceById), new { id = sauce.SauceId }, sauce);
         }
     }
 }

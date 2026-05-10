@@ -28,7 +28,7 @@ public class SauceModel
         Mild, //2
         Medium, //3
         Hot, //4
-        XHot, //5
+        X_Hot, //5
         Wild //6
     }
 
