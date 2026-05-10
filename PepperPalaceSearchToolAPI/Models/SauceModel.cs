@@ -34,14 +34,14 @@ public class SauceModel
 
 
     [Column("pk_sauce_id")]
-    public int SauceId {get; set;}
+    public int SauceId {get;}
 
     [Column("sauce_name")]
     public string SauceName {get; set;}
 
     [Column("sauce_type")]
     public SauceTypeEnum SauceType {get; set;}
-    
+
     [Column("heat_level")]
     public HeatLevelEnum HeatLevel {get; set;}
 

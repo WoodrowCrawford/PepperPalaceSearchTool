@@ -9,8 +9,8 @@ namespace PepperPalaceSearchToolAPI.Models;
 public class FoodModel
 {
     [Column("food_id")]
-    public int FoodID {get; set;}
-    
+    public int FoodID {get;}
+
     [Column("food_name")]
     public string FoodName {get; set;}
 }
