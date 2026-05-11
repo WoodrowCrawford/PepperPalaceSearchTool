@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using PepperPalaceSearchToolAPI.Services;
 
 namespace PepperPalaceSearchToolAPI.Models;
 
@@ -8,9 +9,12 @@ namespace PepperPalaceSearchToolAPI.Models;
 [Table("food")]
 public class FoodModel
 {
-    [Column("food_id")]
+    [Column("pk_food_id")]
     public int FoodID {get;}
 
     [Column("food_name")]
     public string FoodName {get; set;}
+
+
+    
 }
