@@ -8,8 +8,8 @@ A food pairing search tool for Pepper Palace, currently in development. This  is
 - Swagger/ OpenAPI integration
 
 # Purpose
-As a sales person at Pepper Palace, I learned that I struggled a little when it came to selling products. I created this food search tool to help me find what foods go with what sauce. This can be a perfect tool for others to use to get more familiar with products, and  can also be used as a training tool for other employees! 
+As a salesperson at Pepper Palace, I learned that I struggled a little when it came to selling products. I created this food search tool to help me find what foods go with what sauce. This can be a perfect tool for others to use to get more familiar with products, and  can also be used as a training tool for other employees! 
 
-***Note: This is just a pure passion project I made just to learn full stack, it is not an official tool created by Pepper Palace!***
+***Note: This is just a pure passion project I made to help increase sales output, as well as learn full-stack with database integrations. It is not an official tool created by Pepper Palace!***
 
 
