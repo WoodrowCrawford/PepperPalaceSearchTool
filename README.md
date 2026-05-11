@@ -1,2 +1,2 @@
 # PepperPalaceSearchTool
-A food pairing search tool for Pepper Palace
+A food pairing search tool for Pepper Palace, currently in development
