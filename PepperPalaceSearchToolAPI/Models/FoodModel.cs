@@ -14,7 +14,5 @@ public class FoodModel
 
     [Column("food_name")]
     public string FoodName {get; set;}
-
-
     
 }

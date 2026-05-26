@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PepperPalaceSearchToolAPI.Models;
+using PepperPalaceSearchToolAPI.Services;
 
 namespace PepperPalaceSearchToolAPI.Controllers
 {
@@ -9,11 +10,18 @@ namespace PepperPalaceSearchToolAPI.Controllers
     [ApiController]
     public class FoodController : ControllerBase
     {
+        private readonly FoodService _foodService;
+
+        public FoodController(FoodService foodService)
+        {
+            _foodService = foodService;
+        }
+
         // This endpoint will return a list of all foods in the database.
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<FoodModel>>> GetFoods(PepperPalaceContext db)
+        public async Task<ActionResult<IEnumerable<FoodModel>>> GetFoods()
         {
-            var foods = await db.Foods.ToListAsync();
+            var foods = await _foodService.GetFoodsAsync();
             return Ok(foods);
         }
 
@@ -21,9 +29,9 @@ namespace PepperPalaceSearchToolAPI.Controllers
 
         // This endpoint will return a single food by its ID.
         [HttpGet("{id}")]
-        public async Task<ActionResult<FoodModel>> GetFoodById(PepperPalaceContext db, int id)
+        public async Task<ActionResult<FoodModel>> GetFoodById(int id)
         {
-            var food = await db.Foods.FindAsync(id);
+            var food = await _foodService.GetFoodByIdAsync(id);
             if (food == null)
             {
                 return NotFound();
@@ -33,9 +41,9 @@ namespace PepperPalaceSearchToolAPI.Controllers
 
 
         [HttpGet("search")]
-        public async Task<ActionResult<IEnumerable<FoodModel>>> SearchFoods(PepperPalaceContext db, [FromQuery] string name)
+        public async Task<ActionResult<IEnumerable<FoodModel>>> SearchFoods([FromQuery] string name)
         {
-            var foods = await db.Foods.Where(f => f.FoodName.Contains(name)).ToListAsync();
+            var foods = await _foodService.SearchFoodsAsync(name);
             return Ok(foods);
         }
     }

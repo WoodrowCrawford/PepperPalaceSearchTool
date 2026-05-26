@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PepperPalaceSearchToolAPI.Services;
 
 namespace PepperPalaceSearchToolAPI.Controllers
 {
@@ -8,20 +9,27 @@ namespace PepperPalaceSearchToolAPI.Controllers
     [ApiController]
     public class SauceController : ControllerBase
     {
-         // This endpoint will return a list of all sauces in the database.
-        [HttpGet]
-        public async Task<ActionResult> GetSauces(PepperPalaceContext db)
+        private readonly SauceService _sauceService;
+
+        public SauceController(SauceService sauceService)
         {
-            var sauces = await db.Sauces.ToListAsync();
+            _sauceService = sauceService;
+        }
+
+        // This endpoint will return a list of all sauces in the database.
+        [HttpGet]
+        public async Task<ActionResult<IReadOnlyList<SauceModel>>> GetSauces()
+        {
+            var sauces = await _sauceService.GetSaucesAsync();
             return Ok(sauces);
         }
 
 
         // This endpoint will return a single sauce by its ID.
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetSauceById(PepperPalaceContext db, int id)
+        public async Task<ActionResult<IReadOnlyList<SauceModel>>> GetSauceById(int id)
         {
-            var sauce = await db.Sauces.FindAsync(id);
+            var sauce = await _sauceService.GetSauceByIdAsync(id);
             if (sauce == null)
             {
                 return NotFound();

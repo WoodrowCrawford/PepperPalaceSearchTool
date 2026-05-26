@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PepperPalaceSearchToolAPI;
-using PepperPalaceSearchToolAPI.Models;
+using PepperPalaceSearchToolAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
+builder.Services.AddScoped<FoodService>();
+builder.Services.AddScoped<SauceService>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<PepperPalaceContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
