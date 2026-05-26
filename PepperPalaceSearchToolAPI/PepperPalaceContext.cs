@@ -12,13 +12,14 @@ namespace PepperPalaceSearchToolAPI;
 
 public class PepperPalaceContext: DbContext
 {
-   
     public PepperPalaceContext(DbContextOptions<PepperPalaceContext> options) : base(options){}
 
     public DbSet<SauceModel> Sauces {get; set;}
     public DbSet<FoodModel> Foods {get; set;}
     public DbSet<SaucePairingsModel> SaucePairings {get; set;}
 
+
+    // This method will configure the model builder to use the correct table names and column names for the models.
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Configure the SaucePairingsModel to have a composite key of SauceId and FoodId
@@ -32,7 +33,6 @@ public class PepperPalaceContext: DbContext
         modelBuilder.Entity<SauceModel>().Property(s => s.HeatLevel).HasConversion(v => v.ToString().Replace("_", "-"),
          v => (SauceModel.HeatLevelEnum)Enum.Parse(typeof(SauceModel.HeatLevelEnum), v.Replace("-", "_")));
 
-        
 
     }
 

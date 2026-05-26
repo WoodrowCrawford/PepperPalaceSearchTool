@@ -10,6 +10,7 @@ namespace PepperPalaceSearchToolAPI.Controllers
     [ApiController]
     public class FoodController : ControllerBase
     {
+        //A private readonly used to get a reference to the FoodService class
         private readonly FoodService _foodService;
 
         public FoodController(FoodService foodService)
@@ -19,7 +20,7 @@ namespace PepperPalaceSearchToolAPI.Controllers
 
         // This endpoint will return a list of all foods in the database.
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<FoodModel>>> GetFoods()
+        public async Task<ActionResult<IReadOnlyList<FoodModel>>> GetFoods()
         {
             var foods = await _foodService.GetFoodsAsync();
             return Ok(foods);
@@ -29,7 +30,7 @@ namespace PepperPalaceSearchToolAPI.Controllers
 
         // This endpoint will return a single food by its ID.
         [HttpGet("{id}")]
-        public async Task<ActionResult<FoodModel>> GetFoodById(int id)
+        public async Task<ActionResult<IReadOnlyList<FoodModel>>> GetFoodById(int id)
         {
             var food = await _foodService.GetFoodByIdAsync(id);
             if (food == null)
@@ -41,7 +42,7 @@ namespace PepperPalaceSearchToolAPI.Controllers
 
 
         [HttpGet("search")]
-        public async Task<ActionResult<IEnumerable<FoodModel>>> SearchFoods([FromQuery] string name)
+        public async Task<ActionResult<IReadOnlyList<FoodModel>>> SearchFoods([FromQuery] string name)
         {
             var foods = await _foodService.SearchFoodsAsync(name);
             return Ok(foods);

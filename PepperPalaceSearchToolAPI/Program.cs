@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<FoodService>();
 builder.Services.AddScoped<SauceService>();
+builder.Services.AddScoped<SaucePairingsService>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<PepperPalaceContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));

@@ -9,8 +9,10 @@ namespace PepperPalaceSearchToolAPI.Controllers
     [ApiController]
     public class SauceController : ControllerBase
     {
+        //A private readonly used to get a reference to the SauceService class
         private readonly SauceService _sauceService;
 
+        
         public SauceController(SauceService sauceService)
         {
             _sauceService = sauceService;
