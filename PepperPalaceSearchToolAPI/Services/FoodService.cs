@@ -28,7 +28,7 @@ public class FoodService
     {
         return await _db.Foods
             .AsNoTracking()
-            .Where(f => f.FoodID == id)
+            .Where(f => f.FoodId == id)
             .ToListAsync();
     }
 
