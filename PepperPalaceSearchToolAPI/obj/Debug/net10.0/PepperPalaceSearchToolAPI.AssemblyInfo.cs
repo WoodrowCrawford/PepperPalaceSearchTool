@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PepperPalaceSearchToolAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e910aed49a8599d90c564f553dc704014698ff8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d98b6db7d6ad0db57cd19ded4e697a64c2bb0cde")]
 [assembly: System.Reflection.AssemblyProductAttribute("PepperPalaceSearchToolAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PepperPalaceSearchToolAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
