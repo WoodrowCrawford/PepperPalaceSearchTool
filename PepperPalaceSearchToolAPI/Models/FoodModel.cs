@@ -1,6 +1,4 @@
-using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using PepperPalaceSearchToolAPI.Services;
 
 namespace PepperPalaceSearchToolAPI.Models;
 

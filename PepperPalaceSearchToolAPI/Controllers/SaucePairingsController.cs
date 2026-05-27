@@ -1,8 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using PepperPalaceSearchToolAPI.DTOs;
-using PepperPalaceSearchToolAPI.Models;
 using PepperPalaceSearchToolAPI.Services;
 
 namespace PepperPalaceSearchToolAPI.Controllers

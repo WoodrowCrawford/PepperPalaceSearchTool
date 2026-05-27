@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 //The sauce model will represent the different types of sauces that can be searched for in the Pepper Palace Search Tool. 
