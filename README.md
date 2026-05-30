@@ -1,8 +1,7 @@
 # PepperPalaceSearchTool
 PepperPalaceSearchTool is an ASP.NET Core Web API for managing hot sauce inventory and food pairings, backed by a MySQL database with Entity Framework Core.
 
-Live Demo: https://pepper-palace-api-gya0b3cbgwhchjce.westus3-01.azurewebsites.net/swagger/index.html
-
+Live demo: https://pepper-palace-api-gya0b3cbgwhchjce.westus3-01.azurewebsites.net/swagger/index.html
 
 
 ## This project demonstrates:
