@@ -1,22 +1,28 @@
 # PepperPalaceSearchTool
 PepperPalaceSearchTool is an ASP.NET Core Web API for managing hot sauce inventory and food pairings, backed by a MySQL database with Entity Framework Core.
 
+Live Demo: https://pepper-palace-api-gya0b3cbgwhchjce.westus3-01.azurewebsites.net/swagger/index.html
+
+
+
 ## This project demonstrates:
-- Building a RESTful Web API with ASP.NET Core
+- Architecting a layered RESTful API with Controllers, Services, and DTOs
 - Database design with MySQL, including many-to-many relationships using junction tables
 - Entity Framework Core for database access and ORM
 - Dependency Injection and clean separation of concerns
 - Swagger / OpenAPI integration
-- Full CRUD operations across multiple related entities
+- Filtered query endpoints and grouped pairing responses using LINQ projections
+- Cloud deployment to Azure App Service with Swagger UI as the live demo interface
 
 ## Tech Stack
-- ASP.NET Core (.NET 9)
+- ASP.NET Core (.NET 10)
 - C#
 - MySQL
 - Entity Framework Core
 - Pomelo MySQL Provider
 - Swagger / OpenAPI
-- DbSchema (database design)
+- Azure App Service
+- Aiven (cloud-hosted MySQL)
 
 
 ## Getting Started
