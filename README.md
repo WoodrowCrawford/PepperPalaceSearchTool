@@ -36,9 +36,28 @@ Live demo: https://pepper-palace-api-gya0b3cbgwhchjce.westus3-01.azurewebsites.n
 2. Copy `appsettings.Example.json` to `appsettings.json`
 3. Add your MySQL connection string to `appsettings.json`
 4. Run database migrations or apply the schema from `/Database/PepperPalaceTestDB.sql`
-5. Run the API:
+5. Run the API
 
-   
+| Food Enpoints| Description |
+|---|---|
+|`/api/Food` | Returns all the food in the database |
+| `/api/Food/{id}` | Returns the food with the given id |
+| `/api/Food/searchByName` | Returns the food with the given name |
+
+
+| Sauce Enpoints| Description |
+|---|---|
+| `/api/Sauce` | Returns all the sauce in the database | 
+| `/api/Sauce/{id}` | Returns the sauce with the given id |
+| `/api/Sauce/searchBySauceType` | Returns all the sauce with the given sauce type |
+| `/api/Sauce/searchByHeatLevel` | Returns all the sauce with the given heat level |
+
+
+| Sauce Pairings Enpoints| Description |
+|---|---|
+| `/api/SaucePairings` | Returns all the sauces with their given pairings in the database |
+| `/api/SaucePairings/searchBySauceType` | Returns all the sauces with their given pairings with the given sauce type |
+| `/api/SaucePairings/searchBySauceName` | Returns the sauce with the given pairings with the given name |
 
 ## Purpose
 As a salesperson at Pepper Palace, I learned that I struggled a little when it came to selling products. I created this food search tool to help me find what foods go with what sauce. This can be a perfect tool for others to use to get more familiar with products, and  can also be used as a training tool for other employees! 
