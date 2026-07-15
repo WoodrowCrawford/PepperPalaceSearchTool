@@ -3,8 +3,11 @@ using PepperPalaceSearchToolAPI.Models;
 
 namespace PepperPalaceSearchToolAPI.Services;
 
+/// <summary>
+/// The FoodService class will handle all of the logic for retrieving food data from the database
 public class FoodService
 {
+    //get the database context through dependency injection
 	private readonly PepperPalaceContext _db;
 
 	public FoodService(PepperPalaceContext db)
